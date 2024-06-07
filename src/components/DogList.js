@@ -8,6 +8,7 @@ const DogList = () => {
 
     useEffect(() => {
         const getBreeds = async () => {
+            //Putting data into the breedsData variable from the fetchBreeds function
             const breedsData = await fetchBreeds();
             setBreeds(breedsData);
         };
