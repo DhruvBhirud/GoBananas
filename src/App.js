@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import DogList from './components/DogList';
+import { AppBar, Toolbar, Typography, Container, Box } from '@mui/material';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                    <img src={`${process.env.PUBLIC_URL}/logo512.png`} alt="Logo" style={{ height: 40, marginRight: 16 }} />
+                    <Typography variant="h6">
+                        GoBananas Dog Breeds
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Container>
+                <DogList />
+            </Container>
+        </Box>
+    );
+};
 
 export default App;
